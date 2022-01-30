@@ -8,7 +8,7 @@ terraform {
 }
 
 # Download the latest Ghost image
-resource "docker_image" "image_id" {
+resource "docker_image" "image_id1" {
   name = "ghost:latest"
 }
 

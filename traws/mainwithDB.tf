@@ -15,11 +15,18 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  count         = 1
   ami           = "ami-9c0638f9"
   instance_type = "t2.micro"
 
   tags = {
     Name = "ExampleAppServerInstance"
+  }
+
+resource "aws_instance" "DB_server" {
+  ami           = "ami-9c0638f9"
+  instance_type = "t2.medium"
+
+  tags = {
+    Name = "ExampleDBServerInstance"
   }
 }

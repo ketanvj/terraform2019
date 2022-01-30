@@ -1,6 +1,6 @@
 variable "image" {
   description = "container image name"
-#  default = "ghost:latest"
+ # default = "ghost:latest"
 }
 
 # Download the latest Ghost image

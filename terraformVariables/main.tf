@@ -8,7 +8,13 @@ variable "image" {
 }
 variable "int_port" {
   description = "internal port for container"
-  default = "2368"
+  #default = "2368"
+
+  validation {
+    condition = length(var.int_port) <= 4
+    error_message = "Port values can only be maximum 4 digits."
+
+  }
 }
 variable "ext_port" {
   description = "external port for container"
