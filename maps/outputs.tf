@@ -1,6 +1,6 @@
 #Output the IP Address of the Container
-output "IP_Address" {
-  value = module.container.ip
+output "shm" {
+  value = module.container.shm
 }
 
 output "Container_Name" {

@@ -12,9 +12,3 @@ module "container" {
   int_port = lookup(var.int_port, var.env)
   ext_port = lookup(var.ext_port, var.env)
 }
-
-#Output the IP Address of the Container
-#output "IP Address" {
-#  value = module.container.ip
-#}
-

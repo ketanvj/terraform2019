@@ -1,6 +1,6 @@
 #Output the IP Address of the Container
-output "ip" {
-  value = docker_container.container_id.ip_address
+output "shm" {
+  value = docker_container.container_id.shm_size
 }
 
 output "container_name" {

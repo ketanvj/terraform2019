@@ -3,12 +3,12 @@ container_name = {
   dev  = "dev_blog"
 }
 image = {
-  prod = "ghost:alpine"
-  dev  = "ghost:latest"
+  prod = "nginx:alpine"
+  dev  = "nginx:latest"
 }
 int_port = {
-  prod = "2368"
-  dev  = "2368"
+  prod = "80"
+  dev  = "80"
 }
 ext_port = {
   prod = "80"
