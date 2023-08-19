@@ -8,16 +8,16 @@ terraform {
 }
 
 # Download the latest Ghost image
-resource "docker_image" "ghost" {
-  name = "ghost:latest"
+resource "docker_image" "nginx" {
+  name = "nginx:alpine"
 }
 
 # Start the Container
 resource "docker_container" "container_id" {
-  name  = "blog"
-  image = docker_image.ghost.image_id
+  name  = "webserver"
+  image = docker_image.nginx.image_id
   ports {
-    internal = "2368"
+    internal = "80"
     external = "80"
   }
 }
