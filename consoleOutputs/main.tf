@@ -1,22 +1,22 @@
 # Download the latest Ghost Image
 resource "docker_image" "image_id" {
-  name = "ghost:latest"
+  name = "nginx:alpine"
 }
 
 # Start the Container
 resource "docker_container" "container_id" {
-  name  = "blog"
-  image = docker_image.image_id.latest
+  name  = "webserver"
+  image = docker_image.image_id.image_id
   ports {
-    internal = "2368"
+    internal = "80"
     external = "80"
   }
 }
 
 #Output the IP Address of the Container
 output "IP_Address" {
-  value = docker_container.container_id.ip_address
-}
+   value = docker_container.container_id.network_data[0].ip_address
+ }
 
 output "container_name" {
   value = docker_container.container_id.name

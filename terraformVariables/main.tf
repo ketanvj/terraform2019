@@ -28,7 +28,7 @@ resource "docker_image" "image_id" {
 # Start the Container
 resource "docker_container" "container_id" {
   name  = var.container_name
-  image = docker_image.image_id.latest
+  image = docker_image.image_id.image_id
   ports {
     internal = var.int_port
     external = var.ext_port
@@ -37,7 +37,7 @@ resource "docker_container" "container_id" {
 
 #Output the IP Address of the Container
 output "IP_Address" {
-  value = docker_container.container_id.ip_address
+  value = docker_container.container_id.network_data[0].ip_address
 }
 
 output "container_name" {
